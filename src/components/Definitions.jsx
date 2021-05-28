@@ -5,6 +5,7 @@ const Definitions = ({ meanings, word, LightTheme, category }) => {
   return (
     <div className="meanings">
       {/* audio---------------------------- */}
+      {/* // if the word only available in meanings 0th index mns in the first element, if the cateogory is english, as audio can be only in english, if there is something inside the word*/}
       {meanings[0] && word && category === "en" && (
         <audio
           style={{ backgroundColor: "#fff", borderRadius: 10 }}
@@ -16,8 +17,9 @@ const Definitions = ({ meanings, word, LightTheme, category }) => {
       )}
       {/* audio---------------------------- */}
 
+{/* // if there nothing, then render the text find any word */}
       {word === "" ? (
-        <span className="subTitle">Start by typing a word in search</span>
+        <span className="subTitle">Find any word exist in the world</span>
       ) : (
         meanings.map((mean) =>
           mean.meanings.map((item) =>
@@ -25,7 +27,8 @@ const Definitions = ({ meanings, word, LightTheme, category }) => {
               <div
                 className="singleMean"
                 style={{
-                  backgroundColor: LightTheme ? "#3b5360" : "white",
+                  // if the light mode turned on,
+                  backgroundColor: LightTheme ? "teal" : "white",
                   color: LightTheme ? "white" : "black",
                 }}
               >
@@ -38,6 +41,7 @@ const Definitions = ({ meanings, word, LightTheme, category }) => {
                 )}
                 {def.synonyms && (
                   <span>
+                    {/* // since there are many synonyms so we have to map through it */}
                     <b>Synonyms :</b> {def.synonyms.map((s) => `${s}, `)}
                   </span>
                 )}
@@ -51,3 +55,5 @@ const Definitions = ({ meanings, word, LightTheme, category }) => {
 };
 
 export default Definitions;
+
+//#3b5360
