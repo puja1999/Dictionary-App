@@ -17,7 +17,7 @@ const Definitions = ({ meanings, word, LightTheme, category }) => {
       )}
       {/* audio---------------------------- */}
 
-{/* // if there nothing, then render the text find any word */}
+      {/* // if there nothing, then render the text find any word */}
       {word === "" ? (
         <span className="subTitle">Find any word exist in the world</span>
       ) : (

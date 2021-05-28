@@ -42,9 +42,9 @@ const Header = ({
   return (
     <div className="header">
       {/* // if there is not any word then print word hunt */}
-      <span className="title">{word ? word : "Dictionary"}</span> 
+      <span className="title">{word ? word : "Dictionary"}</span>
       <div className="inputs">
-        <ThemeProvider theme={darkTheme}> 
+        <ThemeProvider theme={darkTheme}>
           {/* // to input words  */}
           <TextField
             className="search"

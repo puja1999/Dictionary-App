@@ -9,7 +9,7 @@ function App() {
   const [word, setWord] = useState(""); // state for our word which w'll search for
   const [meanings, setMeanings] = useState([]); // state holding meanings from api
   const [category, setCategory] = useState("en"); // state for category, and default value is english
-  const [LightTheme, setLightTheme] = useState(false); // creating state for dark and light mode
+  const [LightTheme, setLightTheme] = useState(true); // creating state for dark and light mode, by default, it will be light mode
 
   const dictionaryApi = async () => {
     try {
@@ -25,10 +25,8 @@ function App() {
   // console.log(meanings);
 
   useEffect(() => {
-    dictionaryApi();   // calling api
-  
-  }, [word, category]); // as w'll call it everytime 
-
+    dictionaryApi(); // calling api
+  }, [word, category]); // as w'll call it everytime
 
   // to switch between dark and light mode
   const ThemeSwitch = withStyles({
